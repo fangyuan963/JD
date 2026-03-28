@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岗位JD解读工具 - MVP</title>
+    <link rel="stylesheet" href="jd-analyzer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题区 -->
+        <header class="header">
+            <h1 class="title">岗位JD解读工具</h1>
+            <p class="subtitle">快速解析招聘JD，轻松理解岗位要求</p>
+        </header>
+
+        <!-- JD输入区 -->
+        <section class="input-section">
+            <div class="input-wrapper">
+                <label class="input-label">📋 输入岗位JD</label>
+                <textarea 
+                    class="jd-input" 
+                    id="jdInput" 
+                    placeholder="请粘贴完整的招聘JD内容..."
+                    rows="8"></textarea>
+            </div>
+            <div class="input-actions">
+                <button class="primary-btn" id="analyzeBtn">
+                    <span class="btn-icon">🔍</span>
+                    开始解析
+                </button>
+                <button class="secondary-btn" id="clearBtn">
+                    <span class="btn-icon">🗑️</span>
+                    清空
+                </button>
+            </div>
+        </section>
+
+        <!-- 解析结果区 -->
+        <section class="result-section" id="resultSection">
+            <div class="result-header">
+                <h2 class="result-title">📊 解析结果</h2>
+                <div class="result-stats">
+                    <span class="stat-item">
+                        <span class="stat-icon">📈</span>
+                        <span class="stat-text">解析用时: <span id="analysisTime">--</span>s</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="result-content">
+                <!-- 一句话看懂 -->
+                <div class="result-card" id="result1">
+                    <div class="card-header">
+                        <span class="card-icon">💡</span>
+                        <h3>一句话看懂</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 要你做的3件事 -->
+                <div class="result-card" id="result2">
+                    <div class="card-header">
+                        <span class="card-icon">📋</span>
+                        <h3>要你做的 3 件事</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 硬门槛/可培养/加分项 -->
+                <div class="result-card" id="result3">
+                    <div class="card-header">
+                        <span class="card-icon">🎯</span>
+                        <h3>硬门槛 / 可培养 / 加分项</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 翻译 + 例子 -->
+                <div class="result-card" id="result4">
+                    <div class="card-header">
+                        <span class="card-icon">🌐</span>
+                        <h3>翻译 + 例子</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 面试反问3个问题 -->
+                <div class="result-card" id="result5">
+                    <div class="card-header">
+                        <span class="card-icon">❓</span>
+                        <h3>面试反问 3 个问题</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 面试可能被问3个问题 -->
+                <div class="result-card" id="result6">
+                    <div class="card-header">
+                        <span class="card-icon">🔍</span>
+                        <h3>面试可能被问 3 个问题</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="placeholder">
+                            <p>点击"开始解析"后显示结果</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">© 2026 岗位JD解读工具 | MVP版本</p>
+                <div class="footer-buttons">
+                    <button class="secondary-btn" id="copyBtn">
+                        <span class="btn-icon">📋</span>
+                        复制结果
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 加载动画 -->
+    <div class="loading" id="loading">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">
+                <p class="loading-title">正在解析JD...</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+                <p class="loading-status" id="loadingStatus">正在连接服务器...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="jd-analyzer.js"></script>
+</body>
+</html>

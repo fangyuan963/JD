@@ -1,0 +1,36 @@
+# 环境变量文件
+.env
+
+# 依赖包
+node_modules/
+package-lock.json
+
+# 临时文件
+*.tmp
+*.temp
+
+# 日志文件
+*.log
+logs/
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 构建产物
+dist/
+build/
+
+# 测试文件
+coverage/
+.nyc_output/
+
+# 其他
+*.bak
+*.old
