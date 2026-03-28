@@ -7,7 +7,7 @@ const state = {
 
 // API配置
 const API_CONFIG = {
-    baseURL: 'http://localhost:3001',
+    baseURL: '',
     timeout: 60000
 };
 
@@ -126,7 +126,7 @@ async function callDeepSeekAPI(jd) {
     const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.timeout);
 
     try {
-        const response = await fetch(`${API_CONFIG.baseURL}/api/analyze-jd`, {
+        const response = await fetch(`api/analyze-jd`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
