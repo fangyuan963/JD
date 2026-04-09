@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     // 读取 Vercel 环境变量里的 Key
     const DEEPSEEK_KEY = process.env.DEEPSEEK_API_KEY;
 
-    const response = await fetch('https://官方-deepseek-api-url', {
+    const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

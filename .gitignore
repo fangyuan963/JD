@@ -1,4 +1,4 @@
-# 环境变量文件
+DEEPSEEK_API_KEY=sk-your-real-api-key-here# 环境变量文件
 .env
 
 # 依赖包
